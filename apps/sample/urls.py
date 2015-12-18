@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-from apps.projects import views
+from apps.sample import views
 
 # Partials Requests
 urlpatterns = [

@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from apps.projects.models import Project
+from apps.sample.models import Sample
 
 class SampleSerializer(serializers.ModelSerializer):
     """
     Used to serialize information based on REST endpoint.
     """
     class Meta:
-        model = Project
+        model = Sample
         fields = ('id', 'title', 'img_src',)

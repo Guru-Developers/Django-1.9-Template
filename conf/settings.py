@@ -118,7 +118,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': '{database-name}',
         'USER': '{user-name}',
-        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
     }
 }
 
@@ -176,7 +176,7 @@ USE_TZ = True
 # ============================================
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_ROOT = os.environ['STATIC_ROOT']
+STATIC_ROOT = os.environ.get('STATIC_ROOT', '')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'vendor'),
@@ -198,5 +198,5 @@ EMAIL_HOST_USER = '{username}'
 EMAIL_HOST = 'smtp.webfaction.com'
 SERVER_EMAIL = '{email}'
 DEFAULT_FROM_EMAIL = '{email}'
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 
