@@ -49,7 +49,6 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # on something like openshift, perhaps we would check for the variable OPENSHIFT instead
 
 DEBUG = 'WEBFACTION' not in os.environ
-TEMPLATE_DEBUG = DEBUG
 
 # Security (Secret Key)
 # ============================================
@@ -85,7 +84,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    'jango.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
@@ -128,6 +127,7 @@ DATABASES = {
 
 TEMPLATES = [
     {
+        'DEBUG': DEBUG,
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
