@@ -78,6 +78,14 @@ It would be nice if we were to have private repositories so as not to worry abou
 shouldn't include anything confidential even in this case), but, since we don't want to spend any unnecessary money, just
 make sure to be careful.
 
+A final Git configuration necessary would be to change your remote URL. That is, if you are using some upstream site to
+host your content, make sure to adjust the pushes necessary after your initial cloning (and then verify):
+
+```
+git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
+git remote -v
+```
+
 Database
 --------
 
